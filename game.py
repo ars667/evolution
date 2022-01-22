@@ -42,7 +42,7 @@ class SMH(pygame.sprite.Sprite):
         pygame.sprite.Sprite.__init__(self)
         self.image = pygame.Surface((30, 30))
         self.image = pygame.image.load(
-        'шмурдяк.png')
+        'sprite\шмурдяк.png')
         self.image.set_colorkey(WHITE)
         #self.image.fill(GREEN)
         self.rect = self.image.get_rect()
