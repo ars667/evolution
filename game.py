@@ -46,7 +46,7 @@ class man(pygame.sprite.Sprite):  # описание существа
         self.image = pygame.image.load(
             'sprite\man.png')
         self.image.set_colorkey(WHITE)
-        # self.image.fill(GREEN)
+        # self.image.fill(green)
         self.rect = self.image.get_rect()
         self.rect.x = random.randrange(WIDTH - self.rect.width)
         self.rect.y = random.randrange(HEIGHT - self.rect.height)
