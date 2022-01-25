@@ -7,6 +7,7 @@ height = 480
 FPS = 60
 number_of_food = 12
 speed = 4
+daynight = 0
 
 white = (255, 255, 255)
 black = (0, 0, 0)
@@ -91,10 +92,17 @@ ti = 0
 running = True
 while running:
     ti += 1
-    if ti == 300:
+    if ti == 400:
+        ti = 0
+        daynight += 1
         if satiety < 10:
             man.kill()
-        print("наступила ночь")
+        if daynight % 2 == 1:
+            print("наступила ночь")
+            grey = (0, 0, 60)
+        else:
+            print("наступил день")
+            grey = (195, 195, 195)
         satiety -= 10
         for i in range(number_of_food):
             m = food()
@@ -108,7 +116,7 @@ while running:
                 i].rect.x != man.rect.x and foods.sprites()[i].rect.y != man.rect.x:
                 best_food = foods.sprites()[i]
         m = best_food
-        ti = 0
+
     clock.tick(FPS)
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
